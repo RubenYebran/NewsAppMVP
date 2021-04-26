@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.newsappmvp.view.ui.news.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.example.newsappmvp.view.ui.details.NewsDetailFragment"
+        android:label="fragment_news_detail"
+        tools:layout="@layout/fragment_news_detail" >
+        <argument
+            android:name="author"
+            app:argType="string"
+            android:defaultValue="Autor no disponible" />
+        <argument
+            android:name="content"
+            app:argType="string"
+            android:defaultValue="Contenido no disponible" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue="Descripcion no disponible" />
+        <argument
+            android:name="publishedAt"
+            app:argType="string"
+            android:defaultValue="Fecha no disponible" />
+        <argument
+            android:name="source"
+            app:argType="string"
+            android:defaultValue="Fuente no disponible" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Titulo no disponible" />
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue="Url del sitio no disponible" />
+        <argument android:name="urlToImage" />
+    </fragment>
+</navigation>
