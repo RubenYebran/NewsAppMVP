@@ -35,7 +35,7 @@ class NewsFragment : Fragment(R.layout.fragment_news), NewsContract.NewsView,
     }
 
     override fun onDataErrorFromApi(throwable: Throwable) {
-        println("Error!!!")
+        println("Throwable: $throwable")
     }
 
     override fun onArticleClick(article: Article) {
@@ -52,10 +52,10 @@ class NewsFragment : Fragment(R.layout.fragment_news), NewsContract.NewsView,
         findNavController().navigate(action)
     }
 
-    fun showProgressBar(){
+    override fun showProgressBar(){
         binding.progressBar.visibility = VISIBLE
     }
-    fun hideProgressBar(){
+    override fun hideProgressBar(){
         binding.progressBar.visibility = INVISIBLE
     }
 }

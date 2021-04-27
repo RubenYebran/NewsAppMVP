@@ -6,7 +6,7 @@ interface NewsContract {
 
     interface NewsPresenter{
         fun getDataFromApi()
-        suspend fun onSucess(list: List<Article>?)
+        suspend fun onSuccess(list: List<Article>?)
         fun onFail()
     }
 
@@ -14,6 +14,8 @@ interface NewsContract {
         fun onDataCompleteFromApi(newsList: List<Article>)
         fun onDataErrorFromApi(throwable: Throwable)
         fun onArticleClick(article: Article)
+        fun showProgressBar()
+        fun hideProgressBar()
     }
 
     interface NewsDetail {

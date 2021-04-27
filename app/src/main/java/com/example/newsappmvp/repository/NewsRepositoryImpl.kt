@@ -8,17 +8,18 @@ import kotlinx.coroutines.*
 import retrofit2.Response
 
 class NewsRepositoryImpl(private val dataSource: NewsDataSource) : NewsRepository {
-
-    val repo = NewsDataSource(NewsAPI.RetrofitNewsList.webService)
+    //val repo = NewsDataSource(NewsAPI.RetrofitNewsList.webService)
 
     override suspend fun getNews(): Response<NewsList> = dataSource.getNews()
 
     override fun getDataFromApi(newsPresenter: NewsPresenter) {
         GlobalScope.launch(Dispatchers.IO) {
-            if (repo.getNews().isSuccessful) {
-                repo.getNews().body().let {
-                    newsPresenter.onSucess(it?.articles)
+            if (getNews().isSuccessful) {
+                getNews().body().let {
+                    newsPresenter.onSuccess(it?.articles)
                 }
+            }else{
+                newsPresenter.onFail()
             }
         }
     }
