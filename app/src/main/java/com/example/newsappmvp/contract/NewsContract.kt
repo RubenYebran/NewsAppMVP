@@ -6,7 +6,7 @@ interface NewsContract {
 
     interface NewsPresenter{
         fun getDataFromApi()
-        suspend fun onSuccess(list: List<Article>?)
+         fun onSuccess(list: List<Article>?)
         fun onFail()
     }
 

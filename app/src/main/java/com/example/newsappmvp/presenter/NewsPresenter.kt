@@ -17,7 +17,7 @@ class NewsPresenter(context: NewsFragment) : NewsContract.NewsPresenter {
         model.getDataFromApi(this)
     }
 
-    override suspend fun onSuccess(list: List<Article>?){
+    override fun onSuccess(list: List<Article>?){
         list?.let {
             newsView.onDataCompleteFromApi(it)
         }
