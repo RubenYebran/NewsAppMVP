@@ -1,18 +1,19 @@
 package com.example.newsappmvp.contract
 
 import com.example.newsappmvp.data.model.Article
+import java.lang.Exception
 
 interface NewsContract {
 
     interface NewsPresenter{
         fun getDataFromApi()
-         fun onSuccess(list: List<Article>?)
-        fun onFail()
+         fun onSuccess(list: List<Article>)
+        fun onFail(t: Throwable)
     }
 
     interface NewsView {
         fun onDataCompleteFromApi(newsList: List<Article>)
-        fun onDataErrorFromApi(throwable: Throwable)
+        fun onDataErrorFromApi(t: Throwable)
         fun onArticleClick(article: Article)
         fun showProgressBar()
         fun hideProgressBar()

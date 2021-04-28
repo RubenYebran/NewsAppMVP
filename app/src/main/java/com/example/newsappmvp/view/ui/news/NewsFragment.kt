@@ -34,8 +34,8 @@ class NewsFragment : Fragment(R.layout.fragment_news), NewsContract.NewsView,
         }
     }
 
-    override fun onDataErrorFromApi(throwable: Throwable) {
-        println("Throwable: $throwable")
+    override fun onDataErrorFromApi(t: Throwable) {
+        println("Exception: $t")
     }
 
     override fun onArticleClick(article: Article) {
