@@ -44,6 +44,7 @@ class NewsAdapter(private val newsList: List<Article>,
             binding.tvSource.text = article.source.name
             Glide.with(context).load(article.urlToImage)
                     .centerCrop().into(binding.imgNews)
+            binding.tvTitulo.text = article.title
         }
     }
 }
