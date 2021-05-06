@@ -30,28 +30,24 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tv_source"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/cardView"
-        app:layout_constraintStart_toStartOf="@id/cardView"
-        app:layout_constraintTop_toBottomOf="@id/cardView"
-        tools:ignore="SmallSp"
-        tools:text="Source" />
-
-    <TextView
         android:id="@+id/tv_titulo"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Hola Hola Hola Hola  Hola Hola Hola Hola Hola Hola Hola Hola  Hola Hola Hola Hola Hola Hola Hola Hola  Hola Hola Hola Hola Hola Hola Hola Hola  Hola Hola Hola Hola Hola Hola Hola Hola  Hola Hola Hola Hola Hola Hola Hola Hola  Hola Hola Hola Hola Hola Hola Hola Hola  Hola Hola Hola Hola " />
+        tools:text="hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola " />
+
+    <TextView
+        android:id="@+id/tvSource"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/tv_titulo"
+        app:layout_constraintTop_toBottomOf="@id/tv_titulo"
+        tools:text="Fuente:" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.newsappmvp.view.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -40,11 +41,12 @@ class NewsAdapter(private val newsList: List<Article>,
 
     inner class NewsViewHolder(private val binding: NewsItemBinding, private val context: Context) : BaseViewHolder<Article>(binding.root) {
 
-        override fun bind(article: Article) {
-            binding.tvSource.text = article.source.name
-            Glide.with(context).load(article.urlToImage)
+        @SuppressLint("SetTextI18n")
+        override fun bind(item: Article) {
+            binding.tvSource.text = "Fuente: ${item.source.name}"
+            Glide.with(context).load(item.urlToImage)
                     .centerCrop().into(binding.imgNews)
-            binding.tvTitulo.text = article.title
+            binding.tvTitulo.text = item.title
         }
     }
 }
