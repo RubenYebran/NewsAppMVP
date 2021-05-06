@@ -6,7 +6,6 @@ import com.example.newsappmvp.data.remote.NewsDataSource
 import com.example.newsappmvp.repository.NewsAPI
 import com.example.newsappmvp.repository.NewsRepositoryImpl
 import com.example.newsappmvp.view.ui.news.NewsFragment
-import java.lang.Exception
 
 class NewsPresenter(context: NewsFragment) : NewsContract.NewsPresenter {
 
@@ -18,7 +17,7 @@ class NewsPresenter(context: NewsFragment) : NewsContract.NewsPresenter {
     }
 
     override fun onSuccess(list: List<Article>){
-        list?.let {
+        list.let {
             newsView.onDataCompleteFromApi(it)
         }
     }
@@ -27,5 +26,3 @@ class NewsPresenter(context: NewsFragment) : NewsContract.NewsPresenter {
         newsView.onDataErrorFromApi(t)
     }
 }
-
-
