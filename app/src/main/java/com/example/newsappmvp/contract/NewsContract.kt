@@ -5,9 +5,9 @@ import java.lang.Exception
 
 interface NewsContract {
 
-    interface NewsPresenter{
+    interface NewsPresenter {
         fun getDataFromApi()
-         fun onSuccess(list: List<Article>)
+        fun onSuccess(list: List<Article>)
         fun onFail(t: Throwable)
     }
 
