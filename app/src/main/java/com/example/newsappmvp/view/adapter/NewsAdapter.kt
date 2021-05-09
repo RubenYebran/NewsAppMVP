@@ -11,8 +11,9 @@ import com.example.newsappmvp.core.BaseViewHolder
 import com.example.newsappmvp.databinding.NewsItemBinding
 import com.example.newsappmvp.data.model.Article
 
-class NewsAdapter(private val newsList: List<Article>,
-                  private val itemClickListener: OnArticleClickListener
+class NewsAdapter(
+    private val newsList: List<Article>,
+    private val itemClickListener: OnArticleClickListener
 ) : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     interface OnArticleClickListener {
@@ -20,11 +21,13 @@ class NewsAdapter(private val newsList: List<Article>,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        val itemBinding = NewsItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemBinding =
+            NewsItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val holder = NewsViewHolder(itemBinding, parent.context)
 
         itemBinding.root.setOnClickListener {
-            val position = holder.bindingAdapterPosition.takeIf { it != DiffUtil.DiffResult.NO_POSITION }
+            val position =
+                holder.bindingAdapterPosition.takeIf { it != DiffUtil.DiffResult.NO_POSITION }
                     ?: return@setOnClickListener
             itemClickListener.onArticleClick(newsList[position])
         }
@@ -39,13 +42,14 @@ class NewsAdapter(private val newsList: List<Article>,
 
     override fun getItemCount(): Int = newsList.size
 
-    inner class NewsViewHolder(private val binding: NewsItemBinding, private val context: Context) : BaseViewHolder<Article>(binding.root) {
+    inner class NewsViewHolder(private val binding: NewsItemBinding, private val context: Context) :
+        BaseViewHolder<Article>(binding.root) {
 
         @SuppressLint("SetTextI18n")
         override fun bind(item: Article) {
             binding.tvSource.text = "Fuente: ${item.source.name}"
             Glide.with(context).load(item.urlToImage)
-                    .centerCrop().into(binding.imgNews)
+                .centerCrop().into(binding.imgNews)
             binding.tvTitulo.text = item.title
         }
     }

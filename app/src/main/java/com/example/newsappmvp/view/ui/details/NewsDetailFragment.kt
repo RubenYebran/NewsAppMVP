@@ -10,7 +10,7 @@ import com.example.newsappmvp.R
 import com.example.newsappmvp.contract.NewsContract
 import com.example.newsappmvp.databinding.FragmentNewsDetailBinding
 
-class NewsDetailFragment : Fragment(R.layout.fragment_news_detail),NewsContract.NewsDetail {
+class NewsDetailFragment : Fragment(R.layout.fragment_news_detail), NewsContract.NewsDetail {
     private lateinit var binding: FragmentNewsDetailBinding
     private val args by navArgs<NewsDetailFragmentArgs>()
 
@@ -20,7 +20,7 @@ class NewsDetailFragment : Fragment(R.layout.fragment_news_detail),NewsContract.
         showData()
     }
 
-     override fun showData() {
+    override fun showData() {
         binding.tvDate.text = args.publishedAt.take(10)
         binding.tvAuthor.text = args.author
         binding.tvTitleText.text = args.title
@@ -29,8 +29,8 @@ class NewsDetailFragment : Fragment(R.layout.fragment_news_detail),NewsContract.
         binding.tvUrlText.text = args.url
 
         Glide.with(requireContext()).load(args.urlToImage)
-                .centerCrop().into(binding.imgNews)
+            .centerCrop().into(binding.imgNews)
         Glide.with(requireContext()).load(args.urlToImage)
-                .centerCrop().into(binding.imgBackground)
+            .centerCrop().into(binding.imgBackground)
     }
 }

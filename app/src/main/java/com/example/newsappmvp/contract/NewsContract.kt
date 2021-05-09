@@ -1,7 +1,6 @@
 package com.example.newsappmvp.contract
 
 import com.example.newsappmvp.data.model.Article
-import java.lang.Exception
 
 interface NewsContract {
 
